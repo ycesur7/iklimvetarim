@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriClimate AI - İklim Verisi Analiz Platformu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">🌾</div>
+            <div class="logo-text">AgriClimate AI</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="analysis.html" class="nav-item">
+                <span class="nav-icon">🔬</span>
+                <span class="nav-text">Veri Analizi</span>
+            </a>
+            <a href="prediction.html" class="nav-item">
+                <span class="nav-icon">🎯</span>
+                <span class="nav-text">Tahmin Modeli</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Raporlar</span>
+            </a>
+            <a href="data.html" class="nav-item">
+                <span class="nav-icon">💾</span>
+                <span class="nav-text">Veri Seti</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AR</div>
+                <div class="user-details">
+                    <div class="user-name">Araştırmacı</div>
+                    <div class="user-role">Admin</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="page-title">
+                <h1>Dashboard</h1>
+                <p class="page-subtitle">Batman İli - Buğday Verimi Analiz Sistemi</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-icon" title="Bildirimler">
+                    <span class="notification-badge">3</span>
+                    🔔
+                </button>
+                <button class="btn-icon" title="Ayarlar">⚙️</button>
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    <span>Senkronize</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <section class="stats-grid">
+            <div class="stat-card primary">
+                <div class="stat-header">
+                    <span class="stat-icon">📅</span>
+                    <span class="stat-trend up">+5.2%</span>
+                </div>
+                <div class="stat-value">2005-2025</div>
+                <div class="stat-label">Veri Aralığı (20 Yıl)</div>
+                <div class="stat-footer">
+                    <span class="stat-detail">240 aylık kayıt</span>
+                </div>
+            </div>
+
+            <div class="stat-card success">
+                <div class="stat-header">
+                    <span class="stat-icon">🎯</span>
+                    <span class="stat-trend up">+2.1%</span>
+                </div>
+                <div class="stat-value">91.3%</div>
+                <div class="stat-label">Model Doğruluğu (R²)</div>
+                <div class="stat-footer">
+                    <span class="stat-detail">Random Forest</span>
+                </div>
+            </div>
+
+            <div class="stat-card warning">
+                <div class="stat-header">
+                    <span class="stat-icon">🌡️</span>
+                    <span class="stat-trend down">-0.8%</span>
+                </div>
+                <div class="stat-value">285 kg</div>
+                <div class="stat-label">Ortalama Verim/Dekar</div>
+                <div class="stat-footer">
+                    <span class="stat-detail">Son 5 yıl ortalaması</span>
+                </div>
+            </div>
+
+            <div class="stat-card info">
+                <div class="stat-header">
+                    <span class="stat-icon">💧</span>
+                    <span class="stat-trend up">+12.4%</span>
+                </div>
+                <div class="stat-value">12</div>
+                <div class="stat-label">Aktif İklim Parametresi</div>
+                <div class="stat-footer">
+                    <span class="stat-detail">Meteoroloji GM</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Grid -->
+        <div class="dashboard-grid">
+            <!-- Live Prediction Panel -->
+            <section class="panel live-prediction">
+                <div class="panel-header">
+                    <h2>Canlı Tahmin Sistemi</h2>
+                    <div class="panel-actions">
+                        <button class="btn-small">Yenile</button>
+                        <button class="btn-small">Dışa Aktar</button>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="prediction-display">
+                        <div class="prediction-main">
+                            <div class="prediction-label">2025 Tahmini Verim</div>
+                            <div class="prediction-value" id="mainPrediction">312</div>
+                            <div class="prediction-unit">kg/dekar</div>
+                        </div>
+                        <div class="prediction-confidence">
+                            <div class="confidence-circle">
+                                <svg viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="45" class="confidence-bg"></circle>
+                                    <circle cx="50" cy="50" r="45" class="confidence-fill" style="stroke-dasharray: 257; stroke-dashoffset: 25.7;"></circle>
+                                </svg>
+                                <div class="confidence-text">91%</div>
+                            </div>
+                            <div class="confidence-label">Güven Skoru</div>
+                        </div>
+                    </div>
+                    
+                    <div class="parameters-grid">
+                        <div class="param-item">
+                            <label>Mart Yağış (mm)</label>
+                            <input type="range" id="param1" min="20" max="150" value="82" oninput="updatePrediction()">
+                            <span class="param-value" id="val1">82 mm</span>
+                        </div>
+                        <div class="param-item">
+                            <label>Nisan Yağış (mm)</label>
+                            <input type="range" id="param2" min="30" max="180" value="105" oninput="updatePrediction()">
+                            <span class="param-value" id="val2">105 mm</span>
+                        </div>
+                        <div class="param-item">
+                            <label>Mayıs Sıcaklık (°C)</label>
+                            <input type="range" id="param3" min="15" max="28" value="20" oninput="updatePrediction()">
+                            <span class="param-value" id="val3">20 °C</span>
+                        </div>
+                        <div class="param-item">
+                            <label>Haziran Sıcaklık (°C)</label>
+                            <input type="range" id="param4" min="22" max="35" value="27" oninput="updatePrediction()">
+                            <span class="param-value" id="val4">27 °C</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Importance Chart -->
+            <section class="panel feature-importance">
+                <div class="panel-header">
+                    <h2>Faktör Önem Dereceleri</h2>
+                    <select class="select-small">
+                        <option>Random Forest</option>
+                        <option>XGBoost</option>
+                        <option>Linear Regression</option>
+                    </select>
+                </div>
+                <div class="panel-content">
+                    <div class="importance-list">
+                        <div class="importance-item">
+                            <div class="importance-info">
+                                <span class="importance-rank">1</span>
+                                <span class="importance-name">Nisan Yağış Miktarı</span>
+                            </div>
+                            <div class="importance-bar-container">
+                                <div class="importance-bar" style="width: 94%"></div>
+                            </div>
+                            <span class="importance-score">0.94</span>
+                        </div>
+                        <div class="importance-item">
+                            <div class="importance-info">
+                                <span class="importance-rank">2</span>
+                                <span class="importance-name">Mayıs Ortalama Sıcaklık</span>
+                            </div>
+                            <div class="importance-bar-container">
+                                <div class="importance-bar" style="width: 87%"></div>
+                            </div>
+                            <span class="importance-score">0.87</span>
+                        </div>
+                        <div class="importance-item">
+                            <div class="importance-info">
+                                <span class="importance-rank">3</span>
+                                <span class="importance-name">Mart Yağış Miktarı</span>
+                            </div>
+                            <div class="importance-bar-container">
+                                <div class="importance-bar" style="width: 81%"></div>
+                            </div>
+                            <span class="importance-score">0.81</span>
+                        </div>
+                        <div class="importance-item">
+                            <div class="importance-info">
+                                <span class="importance-rank">4</span>
+                                <span class="importance-name">Haziran Ortalama Sıcaklık</span>
+                            </div>
+                            <div class="importance-bar-container">
+                                <div class="importance-bar" style="width: 68%"></div>
+                            </div>
+                            <span class="importance-score">0.68</span>
+                        </div>
+                        <div class="importance-item">
+                            <div class="importance-info">
+                                <span class="importance-rank">5</span>
+                                <span class="importance-name">Şubat Yağış Miktarı</span>
+                            </div>
+                            <div class="importance-bar-container">
+                                <div class="importance-bar" style="width: 52%"></div>
+                            </div>
+                            <span class="importance-score">0.52</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Time Series Chart -->
+            <section class="panel time-series">
+                <div class="panel-header">
+                    <h2>Yıllık Verim Trendi</h2>
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="legend-dot actual"></span>Gerçek</span>
+                        <span class="legend-item"><span class="legend-dot predicted"></span>Tahmin</span>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div class="chart-container">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="panel activity-log">
+                <div class="panel-header">
+                    <h2>Son Aktiviteler</h2>
+                    <button class="btn-text">Tümünü Gör</button>
+                </div>
+                <div class="panel-content">
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon success">✓</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Model eğitimi tamamlandı</div>
+                                <div class="activity-time">2 dakika önce</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon info">📥</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Yeni veri seti yüklendi (2024-2025)</div>
+                                <div class="activity-time">15 dakika önce</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon warning">⚠️</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Anomali tespit edildi - Nisan 2024</div>
+                                <div class="activity-time">1 saat önce</div>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon success">📊</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Aylık rapor oluşturuldu</div>
+                                <div class="activity-time">3 saat önce</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
