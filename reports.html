@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raporlar - AgriClimate AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">🌾</div>
+            <div class="logo-text">AgriClimate AI</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="analysis.html" class="nav-item">
+                <span class="nav-icon">🔬</span>
+                <span class="nav-text">Veri Analizi</span>
+            </a>
+            <a href="prediction.html" class="nav-item">
+                <span class="nav-icon">🎯</span>
+                <span class="nav-text">Tahmin Modeli</span>
+            </a>
+            <a href="reports.html" class="nav-item active">
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Raporlar</span>
+            </a>
+            <a href="data.html" class="nav-item">
+                <span class="nav-icon">💾</span>
+                <span class="nav-text">Veri Seti</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AR</div>
+                <div class="user-details">
+                    <div class="user-name">Araştırmacı</div>
+                    <div class="user-role">Admin</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="page-title">
+                <h1>Raporlar</h1>
+                <p class="page-subtitle">Oluşturulan analiz raporları ve dışa aktarımlar</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-icon">🔔</button>
+                <button class="btn-icon">⚙️</button>
+                <button style="padding: 0.5rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">+ Yeni Rapor</button>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <section class="panel" style="grid-column: span 12;">
+                <div class="panel-header">
+                    <h2>Rapor Geçmişi</h2>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <select class="select-small">
+                            <option>Tüm Raporlar</option>
+                            <option>Aylık</option>
+                            <option>Yıllık</option>
+                            <option>Özel</option>
+                        </select>
+                        <button class="btn-small">Filtrele</button>
+                    </div>
+                </div>
+                <div class="panel-content">
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="display: flex; align-items: center; padding: 1.5rem; background: var(--light); border-radius: 12px; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='var(--light)'">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary), #8b5cf6); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-right: 1rem;">📄</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">2025 Yıllık Verim Analiz Raporu</div>
+                                <div style="font-size: 0.875rem; color: var(--gray);">Batman İli - Buğday Verimi Detaylı Analiz ve Tahminler</div>
+                            </div>
+                            <div style="text-align: right; margin-right: 2rem;">
+                                <div style="font-size: 0.75rem; color: var(--gray); margin-bottom: 0.25rem;">Oluşturulma</div>
+                                <div style="font-weight: 600;">15 Nisan 2025</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button style="padding: 0.5rem 1rem; background: white; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-weight: 500;">Görüntüle</button>
+                                <button style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500;">İndir</button>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; padding: 1.5rem; background: var(--light); border-radius: 12px; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='var(--light)'">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--success), #10b981); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-right: 1rem;">📊</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Mart 2025 Aylık İklim Raporu</div>
+                                <div style="font-size: 0.875rem; color: var(--gray);">Meteorolojik veriler ve tarımsal etki analizi</div>
+                            </div>
+                            <div style="text-align: right; margin-right: 2rem;">
+                                <div style="font-size: 0.75rem; color: var(--gray); margin-bottom: 0.25rem;">Oluşturulma</div>
+                                <div style="font-weight: 600;">1 Nisan 2025</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button style="padding: 0.5rem 1rem; background: white; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-weight: 500;">Görüntüle</button>
+                                <button style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500;">İndir</button>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; padding: 1.5rem; background: var(--light); border-radius: 12px; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='var(--light)'">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--warning), #f59e0b); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-right: 1rem;">📈</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">Model Performans Raporu Q1 2025</div>
+                                <div style="font-size: 0.875rem; color: var(--gray);">Makine öğrenmesi modeli doğruluk ve iyileştirme önerileri</div>
+                            </div>
+                            <div style="text-align: right; margin-right: 2rem;">
+                                <div style="font-size: 0.75rem; color: var(--gray); margin-bottom: 0.25rem;">Oluşturulma</div>
+                                <div style="font-weight: 600;">28 Mart 2025</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button style="padding: 0.5rem 1rem; background: white; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-weight: 500;">Görüntüle</button>
+                                <button style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500;">İndir</button>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; padding: 1.5rem; background: var(--light); border-radius: 12px; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='var(--light)'">
+                            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, var(--info), #3b82f6); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin-right: 1rem;">🔬</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; margin-bottom: 0.25rem;">2005-2025 Uzun Dönem Trend Analizi</div>
+                                <div style="font-size: 0.875rem; color: var(--gray);">20 yıllık iklim değişimi ve verim ilişkisi</div>
+                            </div>
+                            <div style="text-align: right; margin-right: 2rem;">
+                                <div style="font-size: 0.75rem; color: var(--gray); margin-bottom: 0.25rem;">Oluşturulma</div>
+                                <div style="font-weight: 600;">10 Mart 2025</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <button style="padding: 0.5rem 1rem; background: white; border: 1px solid #e2e8f0; border-radius: 8px; cursor: pointer; font-weight: 500;">Görüntüle</button>
+                                <button style="padding: 0.5rem 1rem; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500;">İndir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel" style="grid-column: span 6;">
+                <div class="panel-header">
+                    <h2>Rapor İstatistikleri</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                        <div style="text-align: center; padding: 1.5rem; background: var(--light); border-radius: 12px;">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">24</div>
+                            <div style="font-size: 0.875rem; color: var(--gray);">Toplam Rapor</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: var(--light); border-radius: 12px;">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--success); margin-bottom: 0.5rem;">4</div>
+                            <div style="font-size: 0.875rem; color: var(--gray);">Bu Ay</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: var(--light); border-radius: 12px;">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--warning); margin-bottom: 0.5rem;">156</div>
+                            <div style="font-size: 0.875rem; color: var(--gray);">İndirme</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: var(--light); border-radius: 12px;">
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--info); margin-bottom: 0.5rem;">3</div>
+                            <div style="font-size: 0.875rem; color: var(--gray);">Paylaşılan</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel" style="grid-column: span 6;">
+                <div class="panel-header">
+                    <h2>Hızlı Dışa Aktarım</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <button style="padding: 1rem; background: white; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; font-weight: 600; text-align: left; display: flex; align-items: center; gap: 1rem; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='#e2e8f0'">
+                            <span style="font-size: 1.5rem;">📑</span>
+                            <span>PDF Raporu Oluştur</span>
+                        </button>
+                        <button style="padding: 1rem; background: white; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; font-weight: 600; text-align: left; display: flex; align-items: center; gap: 1rem; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='#e2e8f0'">
+                            <span style="font-size: 1.5rem;">📊</span>
+                            <span>Excel Veri Dışa Aktar</span>
+                        </button>
+                        <button style="padding: 1rem; background: white; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; font-weight: 600; text-align: left; display: flex; align-items: center; gap: 1rem; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='#e2e8f0'">
+                            <span style="font-size: 1.5rem;">📈</span>
+                            <span>Grafik Görselleri İndir</span>
+                        </button>
+                        <button style="padding: 1rem; background: white; border: 2px solid #e2e8f0; border-radius: 12px; cursor: pointer; font-weight: 600; text-align: left; display: flex; align-items: center; gap: 1rem; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='#e2e8f0'">
+                            <span style="font-size: 1.5rem;">💾</span>
+                            <span>Ham Veri (CSV/JSON)</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

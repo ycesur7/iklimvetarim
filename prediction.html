@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahmin Modeli - AgriClimate AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">🌾</div>
+            <div class="logo-text">AgriClimate AI</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="analysis.html" class="nav-item">
+                <span class="nav-icon">🔬</span>
+                <span class="nav-text">Veri Analizi</span>
+            </a>
+            <a href="prediction.html" class="nav-item active">
+                <span class="nav-icon">🎯</span>
+                <span class="nav-text">Tahmin Modeli</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Raporlar</span>
+            </a>
+            <a href="data.html" class="nav-item">
+                <span class="nav-icon">💾</span>
+                <span class="nav-text">Veri Seti</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AR</div>
+                <div class="user-details">
+                    <div class="user-name">Araştırmacı</div>
+                    <div class="user-role">Admin</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="page-title">
+                <h1>Tahmin Modeli</h1>
+                <p class="page-subtitle">Makine öğrenmesi model performansı ve karşılaştırma</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-icon">🔔</button>
+                <button class="btn-icon">⚙️</button>
+                <div class="sync-status">
+                    <span class="status-dot"></span>
+                    <span>Senkronize</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <section class="panel" style="grid-column: span 12;">
+                <div class="panel-header">
+                    <h2>Model Karşılaştırması</h2>
+                    <button class="btn-small">Yeni Model Eğit</button>
+                </div>
+                <div class="panel-content">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: var(--light);">
+                                <th style="padding: 1rem; text-align: left; font-weight: 600;">Model</th>
+                                <th style="padding: 1rem; text-align: center;">R² Score</th>
+                                <th style="padding: 1rem; text-align: center;">RMSE</th>
+                                <th style="padding: 1rem; text-align: center;">MAE</th>
+                                <th style="padding: 1rem; text-align: center;">Eğitim Süresi</th>
+                                <th style="padding: 1rem; text-align: center;">Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 1rem; font-weight: 600;">Random Forest</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--success); font-weight: 600;">0.913</td>
+                                <td style="padding: 1rem; text-align: center;">16.2 kg</td>
+                                <td style="padding: 1rem; text-align: center;">12.8 kg</td>
+                                <td style="padding: 1rem; text-align: center;">2.4s</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #d1fae5; color: var(--success); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Aktif</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 1rem; font-weight: 600;">XGBoost</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--success); font-weight: 600;">0.897</td>
+                                <td style="padding: 1rem; text-align: center;">17.8 kg</td>
+                                <td style="padding: 1rem; text-align: center;">13.9 kg</td>
+                                <td style="padding: 1rem; text-align: center;">3.1s</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #e2e8f0; color: var(--gray); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Yedek</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 1rem; font-weight: 600;">Gradient Boosting</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--success); font-weight: 600;">0.885</td>
+                                <td style="padding: 1rem; text-align: center;">18.9 kg</td>
+                                <td style="padding: 1rem; text-align: center;">14.5 kg</td>
+                                <td style="padding: 1rem; text-align: center;">4.2s</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #e2e8f0; color: var(--gray); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Yedek</span></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e2e8f0;">
+                                <td style="padding: 1rem; font-weight: 600;">Linear Regression</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--warning); font-weight: 600;">0.762</td>
+                                <td style="padding: 1rem; text-align: center;">27.3 kg</td>
+                                <td style="padding: 1rem; text-align: center;">21.4 kg</td>
+                                <td style="padding: 1rem; text-align: center;">0.3s</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #e2e8f0; color: var(--gray); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Arşiv</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; font-weight: 600;">Support Vector Regression</td>
+                                <td style="padding: 1rem; text-align: center; color: var(--warning); font-weight: 600;">0.748</td>
+                                <td style="padding: 1rem; text-align: center;">28.1 kg</td>
+                                <td style="padding: 1rem; text-align: center;">22.6 kg</td>
+                                <td style="padding: 1rem; text-align: center;">5.8s</td>
+                                <td style="padding: 1rem; text-align: center;"><span style="background: #e2e8f0; color: var(--gray); padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600;">Arşiv</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="panel" style="grid-column: span 6;">
+                <div class="panel-header">
+                    <h2>Hiperparametre Ayarları</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 0.5rem;">n_estimators</label>
+                        <input type="number" value="200" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 0.5rem;">max_depth</label>
+                        <input type="number" value="15" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 0.5rem;">min_samples_split</label>
+                        <input type="number" value="5" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: 500; margin-bottom: 0.5rem;">min_samples_leaf</label>
+                        <input type="number" value="2" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px;">
+                    </div>
+                    <button style="width: 100%; padding: 0.875rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Modeli Yeniden Eğit</button>
+                </div>
+            </section>
+
+            <section class="panel" style="grid-column: span 6;">
+                <div class="panel-header">
+                    <h2>Cross-Validation Sonuçları</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-weight: 500;">Fold 1</span>
+                            <span style="font-weight: 600; color: var(--primary);">R² = 0.925</span>
+                        </div>
+                        <div style="height: 8px; background: var(--light); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 92.5%; height: 100%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-weight: 500;">Fold 2</span>
+                            <span style="font-weight: 600; color: var(--primary);">R² = 0.908</span>
+                        </div>
+                        <div style="height: 8px; background: var(--light); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 90.8%; height: 100%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-weight: 500;">Fold 3</span>
+                            <span style="font-weight: 600; color: var(--primary);">R² = 0.917</span>
+                        </div>
+                        <div style="height: 8px; background: var(--light); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 91.7%; height: 100%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-weight: 500;">Fold 4</span>
+                            <span style="font-weight: 600; color: var(--primary);">R² = 0.902</span>
+                        </div>
+                        <div style="height: 8px; background: var(--light); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 90.2%; height: 100%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span style="font-weight: 500;">Fold 5</span>
+                            <span style="font-weight: 600; color: var(--primary);">R² = 0.913</span>
+                        </div>
+                        <div style="height: 8px; background: var(--light); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 91.3%; height: 100%; background: var(--primary);"></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e2e8f0; text-align: center;">
+                        <div style="font-size: 0.875rem; color: var(--gray); margin-bottom: 0.25rem;">Ortalama R² Score</div>
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">0.913 ± 0.008</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

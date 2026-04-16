@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veri Seti - AgriClimate AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon">🌾</div>
+            <div class="logo-text">AgriClimate AI</div>
+        </div>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="analysis.html" class="nav-item">
+                <span class="nav-icon">🔬</span>
+                <span class="nav-text">Veri Analizi</span>
+            </a>
+            <a href="prediction.html" class="nav-item">
+                <span class="nav-icon">🎯</span>
+                <span class="nav-text">Tahmin Modeli</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span class="nav-text">Raporlar</span>
+            </a>
+            <a href="data.html" class="nav-item active">
+                <span class="nav-icon">💾</span>
+                <span class="nav-text">Veri Seti</span>
+            </a>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">AR</div>
+                <div class="user-details">
+                    <div class="user-name">Araştırmacı</div>
+                    <div class="user-role">Admin</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="page-title">
+                <h1>Veri Seti</h1>
+                <p class="page-subtitle">Meteoroloji ve TÜİK veri kaynakları</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-icon">🔔</button>
+                <button class="btn-icon">⚙️</button>
+                <button style="padding: 0.5rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">+ Veri Yükle</button>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <section class="panel" style="grid-column: span 4;">
+                <div class="panel-header">
+                    <h2>Veri Kaynakları</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="padding: 1.5rem; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 12px; color: white;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌡️</div>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Meteoroloji GM</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 1rem;">İklim ve hava durumu verileri</div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
+                                <span>Son Güncelleme:</span>
+                                <span style="font-weight: 600;">15 Nisan 2025</span>
+                            </div>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: linear-gradient(135deg, #10b981, #059669); border-radius: 12px; color: white;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">TÜİK</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 1rem;">Tarımsal üretim istatistikleri</div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
+                                <span>Son Güncelleme:</span>
+                                <span style="font-weight: 600;">10 Nisan 2025</span>
+                            </div>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 12px; color: white;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🛰️</div>
+                            <div style="font-weight: 600; margin-bottom: 0.5rem;">Uydu Verileri</div>
+                            <div style="font-size: 0.875rem; opacity: 0.9; margin-bottom: 1rem;">NDVI ve arazi kullanım verileri</div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
+                                <span>Son Güncelleme:</span>
+                                <span style="font-weight: 600;">8 Nisan 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel" style="grid-column: span 8;">
+                <div class="panel-header">
+                    <h2>Veri Önizleme - Batman İli (2020-2025)</h2>
+                    <select class="select-small">
+                        <option>Son 5 Yıl</option>
+                        <option>Son 10 Yıl</option>
+                        <option>Tüm Veri (20 Yıl)</option>
+                    </select>
+                </div>
+                <div class="panel-content">
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.875rem;">
+                            <thead>
+                                <tr style="background: var(--light);">
+                                    <th style="padding: 0.75rem; text-align: left; font-weight: 600;">Yıl</th>
+                                    <th style="padding: 0.75rem; text-align: center;">Mart Yağış (mm)</th>
+                                    <th style="padding: 0.75rem; text-align: center;">Nisan Yağış (mm)</th>
+                                    <th style="padding: 0.75rem; text-align: center;">Mayıs Sıc. (°C)</th>
+                                    <th style="padding: 0.75rem; text-align: center;">Haziran Sıc. (°C)</th>
+                                    <th style="padding: 0.75rem; text-align: center;">Verim (kg/dekar)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.75rem; font-weight: 600;">2025</td>
+                                    <td style="padding: 0.75rem; text-align: center;">82</td>
+                                    <td style="padding: 0.75rem; text-align: center;">105</td>
+                                    <td style="padding: 0.75rem; text-align: center;">20.5</td>
+                                    <td style="padding: 0.75rem; text-align: center;">27.2</td>
+                                    <td style="padding: 0.75rem; text-align: center; color: var(--gray); font-style: italic;">Tahmin: 312</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0; background: #f9fafb;">
+                                    <td style="padding: 0.75rem; font-weight: 600;">2024</td>
+                                    <td style="padding: 0.75rem; text-align: center;">78</td>
+                                    <td style="padding: 0.75rem; text-align: center;">112</td>
+                                    <td style="padding: 0.75rem; text-align: center;">19.8</td>
+                                    <td style="padding: 0.75rem; text-align: center;">28.1</td>
+                                    <td style="padding: 0.75rem; text-align: center; font-weight: 600;">295</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.75rem; font-weight: 600;">2023</td>
+                                    <td style="padding: 0.75rem; text-align: center;">85</td>
+                                    <td style="padding: 0.75rem; text-align: center;">98</td>
+                                    <td style="padding: 0.75rem; text-align: center;">21.2</td>
+                                    <td style="padding: 0.75rem; text-align: center;">26.8</td>
+                                    <td style="padding: 0.75rem; text-align: center; font-weight: 600;">285</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0; background: #f9fafb;">
+                                    <td style="padding: 0.75rem; font-weight: 600;">2022</td>
+                                    <td style="padding: 0.75rem; text-align: center;">72</td>
+                                    <td style="padding: 0.75rem; text-align: center;">89</td>
+                                    <td style="padding: 0.75rem; text-align: center;">22.5</td>
+                                    <td style="padding: 0.75rem; text-align: center;">29.3</td>
+                                    <td style="padding: 0.75rem; text-align: center; font-weight: 600;">268</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 0.75rem; font-weight: 600;">2021</td>
+                                    <td style="padding: 0.75rem; text-align: center;">88</td>
+                                    <td style="padding: 0.75rem; text-align: center;">118</td>
+                                    <td style="padding: 0.75rem; text-align: center;">19.2</td>
+                                    <td style="padding: 0.75rem; text-align: center;">26.5</td>
+                                    <td style="padding: 0.75rem; text-align: center; font-weight: 600;">290</td>
+                                </tr>
+                                <tr style="background: #f9fafb;">
+                                    <td style="padding: 0.75rem; font-weight: 600;">2020</td>
+                                    <td style="padding: 0.75rem; text-align: center;">75</td>
+                                    <td style="padding: 0.75rem; text-align: center;">95</td>
+                                    <td style="padding: 0.75rem; text-align: center;">20.8</td>
+                                    <td style="padding: 0.75rem; text-align: center;">27.9</td>
+                                    <td style="padding: 0.75rem; text-align: center; font-weight: 600;">275</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel" style="grid-column: span 12;">
+                <div class="panel-header">
+                    <h2>Veri Seti Bilgileri</h2>
+                </div>
+                <div class="panel-content">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--primary);">📊 Meteorolojik Parametreler</h3>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Aylık yağış miktarı (mm)</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Ortalama sıcaklık (°C)</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Maksimum/minimum sıcaklık</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Güneşlenme süresi (saat)</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Nem oranı (%)</li>
+                                <li style="padding: 0.5rem 0;">✓ Rüzgar hızı (m/s)</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--success);">🌾 Tarımsal Parametreler</h3>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Buğday verimi (kg/dekar)</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Ekim alanı (dekar)</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Üretim miktarı (ton)</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Hasat tarihi</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;">✓ Çeşit bilgisi</li>
+                                <li style="padding: 0.5rem 0;">✓ Toprak tipi</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 1rem; color: var(--warning);">📈 Veri Özellikleri</h3>
+                            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;"><strong>Zaman Aralığı:</strong> 2005-2025</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;"><strong>Toplam Kayıt:</strong> 240 ay</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;"><strong>Eksik Veri:</strong> %0.0</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;"><strong>Veri Boyutu:</strong> 2.4 MB</li>
+                                <li style="padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0;"><strong>Format:</strong> CSV, JSON, Excel</li>
+                                <li style="padding: 0.5rem 0;"><strong>Güncelleme:</strong> Aylık</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
