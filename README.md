@@ -37,6 +37,19 @@ Bu proje, Batman ili için son 20 yıllık (2005-2025) meteorolojik ve tarımsal
 3. Dashboard'da slider'ları hareket ettirerek farklı senaryoları test edin
 4. Gerçek zamanlı tahmin sonuçlarını görün
 
+## Gizli Sunum Rehberi
+
+Proje ekibi için özel sunum rehberi: `presentation-guide.html`
+
+Bu sayfa, TÜBİTAK 4006 sunumunda projeyi nasıl anlatacağınıza dair detaylı rehber içerir:
+- Sayfa sayfa sunum akışı
+- Ne söyleyeceğiniz örnekler
+- İpuçları ve dikkat edilmesi gerekenler
+- Olası sorular ve cevapları
+- Teknik detaylar
+
+**Not:** Bu sayfa sadece proje ekibi içindir, jüriye gösterilmez.
+
 ## Veri Kaynakları
 
 - **Meteoroloji Genel Müdürlüğü**: İklim ve hava durumu verileri
@@ -54,14 +67,15 @@ Bu proje, Batman ili için son 20 yıllık (2005-2025) meteorolojik ve tarımsal
 ## Dosya Yapısı
 
 ```
-├── index.html          # Ana dashboard
-├── analysis.html       # Veri analizi sayfası
-├── prediction.html     # Tahmin modeli sayfası
-├── reports.html        # Raporlar sayfası
-├── data.html          # Veri seti sayfası
-├── styles.css         # Tüm stiller
-├── script.js          # JavaScript fonksiyonları
-└── README.md          # Bu dosya
+├── index.html                  # Ana dashboard
+├── analysis.html               # Veri analizi sayfası
+├── prediction.html             # Tahmin modeli sayfası
+├── reports.html                # Raporlar sayfası
+├── data.html                   # Veri seti sayfası
+├── presentation-guide.html     # 🔒 Gizli sunum rehberi (sadece ekip için)
+├── styles.css                  # Tüm stiller
+├── script.js                   # JavaScript fonksiyonları
+└── README.md                   # Bu dosya
 ```
 
 ## Önemli Bulgular
@@ -73,6 +87,10 @@ Bu proje, Batman ili için son 20 yıllık (2005-2025) meteorolojik ve tarımsal
 ## Proje Önemi
 
 Bu araştırma, "Büyük Veri" analizinin çiftçilerin ve hükümetlerin iklim değişikliğine uyum sağlaması ve tarımsal stratejiler geliştirmesi için nasıl güçlü bir karar destek aracı olabileceğini kanıtlamaktadır.
+
+## TÜBİTAK 4006 Bilim Fuarı
+
+Bu proje TÜBİTAK 4006 Bilim Fuarı için hazırlanmıştır. Proje, büyük veri ve makine öğrenmesi teknolojilerinin tarımsal uygulamalarını göstermektedir.
 
 ---
 
