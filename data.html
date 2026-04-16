@@ -55,9 +55,9 @@
                 <p class="page-subtitle">Meteoroloji ve TÜİK veri kaynakları</p>
             </div>
             <div class="top-actions">
-                <button class="btn-icon">🔔</button>
-                <button class="btn-icon">⚙️</button>
-                <button style="padding: 0.5rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">+ Veri Yükle</button>
+                <button class="btn-icon" onclick="alert('Bildirimler\n\n🔔 Model eğitimi tamamlandı (2 dk önce)\n📥 Yeni veri seti yüklendi (15 dk önce)\n⚠️ Anomali tespit edildi (1 saat önce)')">🔔</button>
+                <button class="btn-icon" onclick="alert('Sistem Ayarları\n\n• Model Parametreleri\n• Veri Kaynakları\n• Bildirim Tercihleri\n• Dışa Aktarım Ayarları\n• Kullanıcı Profili')">⚙️</button>
+                <button onclick="alert('Veri Yükleme\n\nDesteklenen formatlar:\n• CSV (.csv)\n• Excel (.xlsx, .xls)\n• JSON (.json)\n\nVeri yükleme formu açılacak.')" style="padding: 0.5rem 1.5rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">+ Veri Yükle</button>
             </div>
         </header>
 
@@ -224,5 +224,7 @@
             </section>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>

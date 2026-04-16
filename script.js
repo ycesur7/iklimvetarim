@@ -125,3 +125,112 @@ document.addEventListener('DOMContentLoaded', function() {
         }, index * 50);
     });
 });
+
+// CSV Export fonksiyonu
+function exportToCSV() {
+    const data = [
+        ['Yıl', 'Mart Yağış (mm)', 'Nisan Yağış (mm)', 'Mayıs Sıcaklık (°C)', 'Haziran Sıcaklık (°C)', 'Verim (kg/dekar)'],
+        ['2025', '82', '105', '20.5', '27.2', 'Tahmin: 312'],
+        ['2024', '78', '112', '19.8', '28.1', '295'],
+        ['2023', '85', '98', '21.2', '26.8', '285'],
+        ['2022', '72', '89', '22.5', '29.3', '268'],
+        ['2021', '88', '118', '19.2', '26.5', '290'],
+        ['2020', '75', '95', '20.8', '27.9', '275']
+    ];
+    
+    let csvContent = data.map(row => row.join(',')).join('\n');
+    
+    const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'batman_bugday_verisi_2020-2025.csv');
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// JSON veri indirme
+function downloadSampleData() {
+    const sampleData = {
+        "proje": "AgriClimate AI - Batman İli Buğday Verimi Analizi",
+        "donem": "2005-2025",
+        "model": "Random Forest Regressor",
+        "performans": {
+            "r2_score": 0.913,
+            "rmse": 16.2,
+            "mae": 12.8
+        },
+        "veriler": [
+            {
+                "yil": 2025,
+                "mart_yagis_mm": 82,
+                "nisan_yagis_mm": 105,
+                "mayis_sicaklik_c": 20.5,
+                "haziran_sicaklik_c": 27.2,
+                "verim_kg_dekar": "Tahmin: 312"
+            },
+            {
+                "yil": 2024,
+                "mart_yagis_mm": 78,
+                "nisan_yagis_mm": 112,
+                "mayis_sicaklik_c": 19.8,
+                "haziran_sicaklik_c": 28.1,
+                "verim_kg_dekar": 295
+            },
+            {
+                "yil": 2023,
+                "mart_yagis_mm": 85,
+                "nisan_yagis_mm": 98,
+                "mayis_sicaklik_c": 21.2,
+                "haziran_sicaklik_c": 26.8,
+                "verim_kg_dekar": 285
+            }
+        ],
+        "faktor_onem": {
+            "nisan_yagis": 0.94,
+            "mayis_sicaklik": 0.87,
+            "mart_yagis": 0.81,
+            "haziran_sicaklik": 0.68
+        }
+    };
+    
+    const jsonStr = JSON.stringify(sampleData, null, 2);
+    const blob = new Blob([jsonStr], { type: 'application/json' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'batman_bugday_verisi_ornek.json');
+    link.style.visibility = 'hidden';
+    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Model yeniden eğitme simülasyonu
+function retrainModel() {
+    const btn = event.target;
+    const originalText = btn.textContent;
+    
+    btn.textContent = 'Eğitiliyor...';
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    
+    setTimeout(() => {
+        btn.textContent = 'Eğitim Tamamlandı ✓';
+        btn.style.background = '#10b981';
+        
+        setTimeout(() => {
+            alert('Model Eğitimi Tamamlandı!\n\nYeni Performans Metrikleri:\n• R² Score: 0.918 (+0.005)\n• RMSE: 15.8 kg/dekar\n• MAE: 12.3 kg/dekar\n\nModel başarıyla güncellendi.');
+            btn.textContent = originalText;
+            btn.disabled = false;
+            btn.style.opacity = '1';
+            btn.style.background = 'var(--primary)';
+        }, 1500);
+    }, 2000);
+}

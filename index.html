@@ -58,11 +58,11 @@
                 <p class="page-subtitle">Batman İli - Buğday Verimi Analiz Sistemi</p>
             </div>
             <div class="top-actions">
-                <button class="btn-icon" title="Bildirimler">
+                <button class="btn-icon" title="Bildirimler" onclick="alert('Bildirimler\n\n🔔 Model eğitimi tamamlandı (2 dk önce)\n📥 Yeni veri seti yüklendi (15 dk önce)\n⚠️ Anomali tespit edildi (1 saat önce)')">
                     <span class="notification-badge">3</span>
                     🔔
                 </button>
-                <button class="btn-icon" title="Ayarlar">⚙️</button>
+                <button class="btn-icon" title="Ayarlar" onclick="alert('Sistem Ayarları\n\n• Model Parametreleri\n• Veri Kaynakları\n• Bildirim Tercihleri\n• Dışa Aktarım Ayarları\n• Kullanıcı Profili')">⚙️</button>
                 <div class="sync-status">
                     <span class="status-dot"></span>
                     <span>Senkronize</span>
@@ -128,8 +128,8 @@
                 <div class="panel-header">
                     <h2>Canlı Tahmin Sistemi</h2>
                     <div class="panel-actions">
-                        <button class="btn-small">Yenile</button>
-                        <button class="btn-small">Dışa Aktar</button>
+                        <button class="btn-small" onclick="location.reload()">Yenile</button>
+                        <button class="btn-small" onclick="window.print()">Yazdır</button>
                     </div>
                 </div>
                 <div class="panel-content">
@@ -262,7 +262,7 @@
             <section class="panel activity-log">
                 <div class="panel-header">
                     <h2>Son Aktiviteler</h2>
-                    <button class="btn-text">Tümünü Gör</button>
+                    <button class="btn-text" onclick="alert('Aktivite Geçmişi\n\nToplam 47 aktivite kaydı bulundu.\n\nSon 24 saat:\n• 12 model eğitimi\n• 8 veri yükleme\n• 5 rapor oluşturma\n• 3 anomali tespiti')">Tümünü Gör</button>
                 </div>
                 <div class="panel-content">
                     <div class="activity-list">

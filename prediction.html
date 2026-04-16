@@ -55,8 +55,8 @@
                 <p class="page-subtitle">Makine öğrenmesi model performansı ve karşılaştırma</p>
             </div>
             <div class="top-actions">
-                <button class="btn-icon">🔔</button>
-                <button class="btn-icon">⚙️</button>
+                <button class="btn-icon" onclick="alert('Bildirimler\n\n🔔 Model eğitimi tamamlandı (2 dk önce)\n📥 Yeni veri seti yüklendi (15 dk önce)\n⚠️ Anomali tespit edildi (1 saat önce)')">🔔</button>
+                <button class="btn-icon" onclick="alert('Sistem Ayarları\n\n• Model Parametreleri\n• Veri Kaynakları\n• Bildirim Tercihleri\n• Dışa Aktarım Ayarları\n• Kullanıcı Profili')">⚙️</button>
                 <div class="sync-status">
                     <span class="status-dot"></span>
                     <span>Senkronize</span>
@@ -68,7 +68,7 @@
             <section class="panel" style="grid-column: span 12;">
                 <div class="panel-header">
                     <h2>Model Karşılaştırması</h2>
-                    <button class="btn-small">Yeni Model Eğit</button>
+                    <button class="btn-small" onclick="alert('Yeni Model Eğitimi\n\nModel türü seçin:\n• Random Forest\n• XGBoost\n• Gradient Boosting\n• Neural Network\n\nEğitim süresi: ~2-5 saniye')">Yeni Model Eğit</button>
                 </div>
                 <div class="panel-content">
                     <table style="width: 100%; border-collapse: collapse;">
@@ -149,7 +149,7 @@
                         <label style="display: block; font-weight: 500; margin-bottom: 0.5rem;">min_samples_leaf</label>
                         <input type="number" value="2" style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 8px;">
                     </div>
-                    <button style="width: 100%; padding: 0.875rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Modeli Yeniden Eğit</button>
+                    <button onclick="retrainModel()" style="width: 100%; padding: 0.875rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Modeli Yeniden Eğit</button>
                 </div>
             </section>
 
@@ -211,5 +211,7 @@
             </section>
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
